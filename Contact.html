@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+    crossorigin="anonymous"
+  />
+
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+  crossorigin="anonymous"
+/>
+
+<script
+  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+  integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+  crossorigin="anonymous"
+></script>
+
+<link
+rel="stylesheet"
+href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+/>
+<!-- Google Fonts -->
+<link
+rel="stylesheet"
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+/>
+<!-- Bootstrap core CSS -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+rel="stylesheet"
+/>
+<!-- Material Design Bootstrap -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css"
+rel="stylesheet"
+/>
+
+<title>Contact</title>
+
+<!--Contact form validation-->
+<script>
+function validateForm() {
+    var FirstName = document.getElementById('FirstName').value;
+    if (FirstName == "") {
+        document.querySelector('.status').innerHTML = "FirstName cannot be empty";
+        return false;
+    }
+
+    var LastName = document.getElementById('LastName').value;
+    if (LastName == "") {
+        document.querySelector('.status').innerHTML = "LastName cannot be empty";
+        return false;
+    }
+
+    var Email = document.getElementById('Email').value;
+    if (Email == "") {
+        document.querySelector('.status').innerHTML = "Email cannot be empty";
+        return false;
+    } else {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!re.test(Email)) {
+            document.querySelector('.status').innerHTML = "Email format invalid";
+            return false;
+        }
+    }
+    var subject = document.getElementById('City').value;
+    if (City == "") {
+        document.querySelector('.status').innerHTML = "City cannot be empty";
+        return false;
+    }
+    var Message = document.getElementById('Message').value;
+    if (Message == "") {
+        document.querySelector('.status').innerHTML = "Message cannot be empty";
+        return false;
+    }
+    document.querySelector('.status').innerHTML = "Sending...";
+}
+</script>
+  </head>
+
+  <body style="background-color: #727475;">
+
+    <!--Navbar-->
+
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a href="index.html" class="navbar-brand">Just Curls</a>
+
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav">
+            <li class="nav-item ">
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+
+            <li class="nav-item ">
+              <a href="Gallery.html" class="nav-link">Gallery</a>
+            </li>
+
+            <li class="nav-item active">
+              <a href="Contact.html" class="nav-link">Contact Us</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="About.html" class="nav-link">About</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+   <!--Contact form-->   
+    <section class="head">
+      <div class="container py-5"><div class="card">
+        <div  class="card-body">
+          <h1 class="font-weight-light text-center py-3">Contact Us</h1>
+
+          <form id="contact-form" name="contact-form" onsubmit="return validateForm()" >
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="FirstName">First Name</label>
+                <input type="text" class="form-control" id="FirstName" placeholder="First Name"">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="LastName">last Name</label>
+                <input type="text" class="form-control" id="LastName" placeholder="Last Name">
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="inputEmail">Email</label>
+              <input type="email" class="form-control" id="Email" placeholder="abc@gmail.com" >
+            </div>
+           
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="City">City</label>
+                <input type="text" class="form-control" id="City" placeholder="city">
+              </div>
+            </div>
+             
+              <div class="form-rowcol-md-6">
+                <label for="Message">Message</label>
+                <input type="text" class="form-control" id="Message" placeholder="Enter your message">
+              </div><br>
+            
+            <button    onclick="validateform()" class="btn btn-primary">Send</button>
+          </div>
+
+          </form>
+          <div style="padding-left:40% ;" class="status"></div>
+
+      </div>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="page-footer mt-auto bg-dark">
+      <div class="container text-center text-mt-4">
+        <div class="row">
+          <div class="col-md-3 py-4 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold">Just Curls</h6>
+            <hr
+              class="bg-success mb-4 mt-0 d-inline-block mx-auto"
+              style="width: 125px; height: 2px"
+            />
+            <p class="mt-2">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Distinctio deleniti voluptatem accusantium inventore corrupti
+              incidunt laudantium eveniet aliquam amet! Illum tempora
+              .
+            </p>
+          </div>
+
+          <div class="col-md-2 py-4 mt-0 mx-auto mb-4">
+            <h6 class="text-uppercase  font-weight-bold">Services</h6>
+            <hr
+              class="bg-success mb-4 mt-0 d-inline-block mx-auto"
+              style="width: 85px; height: 2px"
+            />
+            <ul class="list-unstyled">
+              <li class="my-2"><a href="#">Hair Services</a></li>
+              <li class="my-2"><a href="#">Nail Studio</a></li>
+              <li class="my-2"><a href="#">Skin Services</a></li>
+              <li class="my-2"><a href="#">Body Spa</a></li>
+              <li class="my-2"><a href="#">Bridal Services</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 py-4 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+            <hr
+              class="bg-success mb-4 mt-0 d-inline-block mx-auto"
+              style="width: 85px; height: 2px"
+            />
+
+            <ul class="list-unstyled">
+              <li class="my-2"><a href="index.html">Home</a></li>
+              <li class="my-2"><a href="About.html">About</a></li>
+             
+              <li class="my-2"><a href="Contact.html">Contact us</a></li>
+            </ul>
+          </div>
+
+
+          <div class="col-md-2 py-4 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold">Social Profiles</h6>
+            <hr
+              class="bg-success mb-4 mt-0 d-inline-block mx-auto"
+              style="width: 85px; height: 2px"
+            />
+
+            <ul class="list-unstyled">
+              <li><a  href="https://www.facebook.com"><i class="fab fa-facebook-f text-white py-2 mr-2"></i></a></li>
+              <li><a href="https://twitter.com/?lang=en-in"><i class="fab fa-twitter text-white mr-2"></i></a></li>
+               <li> <a href="https://www.instagram.com/"><i class="fab fa-instagram text-white mr-2"></i></a></li>
+              <li>  <a href="https://www.linkedin.com/"> <i class="fab fa-linkedin-in text-white mr-2"></i></a></li>
+             
+            </ul>
+          </div>
+
+          <div class="col-md-3 py-4 mx-auto mb-4">
+            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+            <hr
+              class="bg-success mb-4 mt-0 d-inline-block mx-auto"
+              style="width: 75px; height: 2px"
+            />
+
+            <ul class="list-unstyled">
+              <li class="my-2">
+                <i class="fas fa-home mr-2"></i>Hyderabad,street 21A
+              </li>
+
+              <li class="my-2">
+                <i class="fas fa-envelope mr-2"></i>justcurls@gmail.com
+              </li>
+              <li class="my-2">
+                <i class="fas fa-phone mr-2"></i>Phn:+917036288168
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-copyright text-center">
+        <p>
+          &copy; Copyright
+          <a href="#">theCurls.com</a>
+          <p>Designed By SaiPrakash</p>
+        </p>
+      </div>
+    </footer> 
+  </body>
+</html>
